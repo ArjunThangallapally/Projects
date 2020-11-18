@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<script>
+function validate()
+{
+	var phval = document.getElementById("ph");
+	var cc = document.getElementById("cin");
+	var cc1 = document.getElementById("cout");
+
+	if(phval.value.length!=10)
+	{
+		alert("phno should be 10 digits!!");
+		return false;
+	}
+
+	else if(cc.value == cc1.value  ){
+		alert("Check in and check out should not be same date!!");
+		return false;
+	}
+
+	else if(cc.value > cc1.value  ){
+		alert("Check out should not be less than check in!!");
+		return false;
+	}
+
+	else if(!form.terms.checked){
+		alert("Continue after checking the box.");
+		form.terms.focus();
+		return false;
+	}
+	else{
+		return true;
+	}
+	
+}
+
+
+</script>
+<style>
+*{
+margin:0;
+padding:0;
+}
+body{
+background-image:url("bg-registration-form-9.jpg");
+background-size:100% 700px;
+background-repeat:no-repeat;
+}
+h2{
+margin-top:30px;	
+margin-bottom:-50px;
+}
+
+.register{
+background:white;
+width:400px;
+height:400px;
+margin:120px;
+left:100;
+top:50;
+color:white;
+font-size:18px;
+padding:20px;
+border-radius:0px;
+padding-left:25px;
+float:left;
+border:7px solid silver;
+}
+.shadow{
+	
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+label{
+color:black;
+font-family:san-serif;
+font-size:18px;
+}
+input[type="date"]{
+	padding:8px;
+    width:150px;
+}
+
+input[type=checkbox]{
+zoom : 0.7;
+}
+select{
+padding:8px;
+width:170px;
+}
+input[type="text"]{
+padding:8px;
+width:150px;
+}
+input[type="tel"]{
+padding:8px;
+width:150px;
+}
+
+#sub{
+background-color:#3e91f7;
+color: #fff;
+width:140px;
+padding:8px;
+font-size:12px;
+font-family:sans-serif;
+font-weight:600;
+border:none;
+}
+.gfg { 
+border-collapse:separate; 
+border-spacing:0 3px;
+}
+.cbox{
+	font-size:13px;
+}
+</style>
+<head>
+</head>
+<body>
+<form onsubmit="return validate();" action="new.html">
+<div class="register ">
+<h2 style="color:#3e91f7">FIND A ROOM</h2>
+<table class="gfg"  style="width:100%">
+<tr>
+<td><label for="name">Name*</label></td>
+<td><label for="phone">Phone*</label></td>
+</tr>
+<tr>
+<td><input type="text" required id="name" placeholder="Your Name"></td>
+
+<td><input type="tel" required id="ph" placeholder="Phone"></td>
+</tr>
+ 
+<tr>
+<td><label>Check-in*</label></td><br>
+<td><label> Check-out*</label</td><br>
+</tr>
+<tr>
+<td><input type="date" onfocus="(this.type='date')" id="cin" name="checkin"></td><br>
+
+<td><input type="date" id="cout" name="checkout"></td><br>
+</tr>
+
+<tr>
+<td><label for="adults">Adults*</label></td>
+<td><label for="child">Children*</label></td>
+</tr>
+<tr>
+<td><select id="adults">
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+</select></td>
+
+<td><select id="adults">
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+</select></td>
+</tr>
+</table><br>
+<input type="checkbox" id="cbox" required align:left>
+<label class="cbox" >No one rejects, dislikes, or avoids pleasure itself.</label><br><br>
+
+<button id="sub">BOOK ROOM</button>
+</div>
+</form>
+</body>
+</html>
